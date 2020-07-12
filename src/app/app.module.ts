@@ -8,6 +8,9 @@ import { UsersModule } from './users/users.module';
 // Rutas 
 import { AppRoutingModule } from './app-routing.module';
 
+// Http 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -16,8 +19,9 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     SharedModule,
     UsersModule,
-    AppRoutingModule
-  ],
+    AppRoutingModule,
+    HttpClientModule
+  ], 
   providers: [],
   bootstrap: [AppComponent]
 })
