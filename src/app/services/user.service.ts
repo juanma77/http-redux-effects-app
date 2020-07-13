@@ -15,7 +15,7 @@ export class UserService {
 
   public getUsers() {
 
-    return this.httpClient.get( `${ this.url }/users?per_page=6` ).pipe(  map( res =>{
+    return this.httpClient.get( `${ this.url }/users?per_page=6&delay=3` ).pipe(  map( res =>{
 
       return res['data']; 
 

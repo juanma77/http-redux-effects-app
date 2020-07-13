@@ -14,6 +14,10 @@ export class ListComponent implements OnInit {
 
   public users: UserModel[] =[]; 
 
+  public loading: boolean = false;
+
+  public error: any; 
+
   constructor( /*private userService: UserService*/ private store: Store<AppState> ) { }
 
   ngOnInit() {
@@ -21,6 +25,11 @@ export class ListComponent implements OnInit {
     this.store.select('users').subscribe( users =>{
 
       this.users = users.users; 
+      
+      this.loading = users.loading;
+
+      this.error = users.error; 
+
       console.log( users.users );
 
     } );
