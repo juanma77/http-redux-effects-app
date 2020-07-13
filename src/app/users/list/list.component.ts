@@ -11,17 +11,17 @@ export class ListComponent implements OnInit {
 
   public users: UserModel; 
 
-  constructor( private userService: UserService ) { }
+  constructor( /*private userService: UserService*/ ) { }
 
   ngOnInit() {
 
-    this.userService.getUsers().subscribe( users =>{
+    /*this.userService.getUsers().subscribe( users =>{
 
       console.log( users );
 
       this.users = users; 
 
-    } );
+    } );*/
 
   }
 

@@ -1,8 +1,9 @@
 import { createReducer, on } from '@ngrx/store';
 import { LOAD_USERS_ACTION, LOAD_USERS_SUCCESS_ACTION, LOAD_USERS_ERROR_ACTION } from '../actions';
+import { UserModel } from '../../models/user.model';
 
 export interface UsersState {
-    users: [],
+    users: UserModel[],
     loaded: boolean,
     loading: boolean,
     error: any 

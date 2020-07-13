@@ -11,6 +11,12 @@ import { AppRoutingModule } from './app-routing.module';
 // Http 
 import { HttpClientModule } from '@angular/common/http';
 
+// Ngrx 
+import { appReducers } from './store/app.reducers';
+import { StoreModule } from '@ngrx/store';
+import { environment } from '../environments/environment';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -20,7 +26,12 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     UsersModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot( appReducers ),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production
+    })
   ], 
   providers: [],
   bootstrap: [AppComponent]
