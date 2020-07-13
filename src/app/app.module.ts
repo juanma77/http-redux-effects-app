@@ -17,6 +17,9 @@ import { StoreModule } from '@ngrx/store';
 import { environment } from '../environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
+import { EffectsModule } from '@ngrx/effects';
+import { EffectsArray } from './store/effects/index';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -31,7 +34,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production
-    })
+    }),
+    EffectsModule.forRoot( EffectsArray )
   ], 
   providers: [],
   bootstrap: [AppComponent]
