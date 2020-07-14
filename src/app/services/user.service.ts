@@ -22,4 +22,15 @@ export class UserService {
       } )
     );
   }
+
+  public getUserById( id: string ) {
+
+    return this.httpClient.get( `${ this.url }/users/${ id }` ).pipe(  map( res =>{
+
+      return res['data']; 
+
+      } )
+    );
+  }
+
 }
